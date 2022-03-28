@@ -1,13 +1,27 @@
-//1) Создать переменную num со значением 266219 (тип данных число)
-let num = 266219;
-//2) Вывести в консоль произведение (умножение) цифр этого числа
-let array = (''+ num).split('');
-let product = array[0];
-for (var i=1; i<array.length; ++i){
-    product *= array[i];
+let lang = "en";
+if (lang == "ru"){
+    console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье");
+}else if(lang == "en") {
+    console.log("Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday");
+}else {
+    console.log("Что-то пошло не так:(");
 }
-//Полученный результат возвести в степень 3, используя только 1 оператор
-product **= 3;
-//Вывести в консоль первые 2 цифры полученного числа
-let number = product.toString();
-console.log(number.substring(0, 2));
+
+//через switch
+switch(lang){
+    case "ru": console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"); break;
+    case "en": console.log("Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"); break;
+    default: console.log("Что-то пошло не так:(");
+}
+
+//через массив
+let array = {
+    "ru": ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
+    "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+};
+console.log(array[lang]);
+
+//имена
+let namePerson= "Артем";
+let result = (namePerson === "Артем") ? "Директор": (namePerson ==="Александр") ? "Преподаватель" : "Студент";
+console.log(result);
