@@ -1,27 +1,18 @@
-let lang = "en";
-if (lang == "ru"){
-    console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье");
-}else if(lang == "en") {
-    console.log("Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday");
-}else {
-    console.log("Что-то пошло не так:(");
-}
+'use strict';
 
-//через switch
-switch(lang){
-    case "ru": console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье"); break;
-    case "en": console.log("Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"); break;
-    default: console.log("Что-то пошло не так:(");
-}
+let someString = prompt("Введите любую строку", "Поешь еще этих мягких французских булок");
 
-//через массив
-let array = {
-    "ru": ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
-    "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+const someFunct = function(str){
+    if (typeof (str) != 'string'){
+     return "Введите строковое значение";
+ } else{
+     str = str.trim();
+     if (str.length > 30){
+         return (str.substring(0,30) + '...');
+     } else{
+         return str;
+     }
+ }
 };
-console.log(array[lang]);
 
-//имена
-let namePerson= "Артем";
-let result = (namePerson === "Артем") ? "Директор": (namePerson ==="Александр") ? "Преподаватель" : "Студент";
-console.log(result);
+console.log(someFunct(someString));
